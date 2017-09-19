@@ -34,6 +34,8 @@ install:
       thumbv*eabi*) rustup component add rust-src ;;
       *) rustup target add $TARGET;;
     esac
+  
+  - chmod +x ci/run.sh && chmod +x ci/run-docker.sh
 
 script:
   # work around rust-lang/cargo#3340
