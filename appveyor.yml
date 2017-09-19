@@ -1,8 +1,4 @@
 environment:
-  # It's... a little unclear why the memcpy symbols clash on linux but not on
-  # other platforms. Would be great to not differ on this though!
-  INTRINSICS_FAILS_WITH_MEM_FEATURE: 1
-
   matrix:
     - TARGET: i686-pc-windows-msvc
     - TARGET: x86_64-pc-windows-msvc
@@ -17,9 +13,7 @@ environment:
       MINGW_URL: https://s3.amazonaws.com/rust-lang-ci
       MINGW_ARCHIVE: i686-4.9.2-release-win32-dwarf-rt_v4-rev4.7z
       MINGW_DIR: mingw32
-      DEBUG_LTO_BUILD_DOESNT_WORK: 1
     - TARGET: x86_64-pc-windows-gnu
-      DEBUG_LTO_BUILD_DOESNT_WORK: 1
 
 install:
   - git submodule update --init
